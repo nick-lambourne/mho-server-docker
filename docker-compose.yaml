@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  mho-static:
+    image: caddy:latest
+    ports: ["9080:80", "9443:443"]
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./web:/space/web
+    restart: always
+
+  mho-server-emu:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        CACHEBUST: $(date +%s)
+        SERVER_BRANCH: master
+        GIT_URL: https://github.com/Crypto137/MHServerEmu.git
+    ports: ["9081:8080", "14306:14306/tcp", "14306:14306/udp"]
+    volumes:
+       - ./Account.db:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Account.db
+    restart: always
