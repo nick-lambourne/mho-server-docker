@@ -36,4 +36,13 @@ Run the Marvel Heroes client with the following command line parameters:
 -siteconfigurl=localhost/SiteConfig.xml -emailaddress=test@test.com -password=123
 ```
 
+### Remote Connections Config
+
+```bash
+# The following command can be used to replace the 'localhost' references with that of your own domain
+grep -lr localhost | xargs sed -i 's/localhost/example.com/g'
+
+# Ensure both UDP and TCP traffic are routed to the host, or the server will be unable to accept connections from the client.
+
+```
 
