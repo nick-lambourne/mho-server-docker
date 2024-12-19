@@ -18,7 +18,7 @@ services:
         SERVER_BRANCH: leaderboards
         GIT_URL: https://github.com/nick-lambourne/MHServerEmu.git
     ports: ["9081:8080", "14306:14306/tcp", "14306:14306/udp"]
-    volumes: []
+    volumes:
       - ./Account.db:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Account.db
       - ./Leaderboards.db:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Leaderboards.db
     restart: always
