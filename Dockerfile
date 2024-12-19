@@ -32,5 +32,7 @@ ADD data/sqlite/* /space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/
 
 EXPOSE 8080/tcp 4306/udp 4306/tcp
 
-ENTRYPOINT ["/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/MHServerEmu"]
+WORKDIR /space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/
+
+ENTRYPOINT ["./MHServerEmu"]
 
