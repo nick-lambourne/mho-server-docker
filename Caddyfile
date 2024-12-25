@@ -8,6 +8,13 @@
             header_up Origin {header.Origin}
         }
     }
+    handle /api/v1/* {
+        reverse_proxy http://mho-server-emu:8080 {
+            header_up Host {http.reverse_proxy.upstream.hostport}
+            header_up X-Real-IP {remote_host}
+            header_up Origin {header.Origin}
+        }
+    }
     handle {
         file_server
     }
