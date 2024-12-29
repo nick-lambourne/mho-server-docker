@@ -19,4 +19,5 @@ services:
     volumes:
       - ./Account.db:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Account.db
       - ./Leaderboards.db:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Leaderboards.db
+      - ./data/LiveTuningData.json:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Game/LiveTuningData.json
     restart: always
