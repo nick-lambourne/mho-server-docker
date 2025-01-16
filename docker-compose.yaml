@@ -16,8 +16,8 @@ services:
       args:
         CACHEBUST: $(date +%s)
         SERVER_BRANCH: master
-        GIT_URL: https://github.com/nick-lambourne/MHServerEmu.git
-    ports: ["9081:8080", "14306:14306/tcp", "14306:14306/udp"]
+        GIT_URL: https://github.com/Crypto127/MHServerEmu.git
+    ports: ["9081:8080", "4306:4306/tcp", "4306:4306/udp"]
     volumes:
       - ./data/Account.db:/space/MHServerEmu/src/MHServerEmu/bin/x64/Debug/net8.0/Data/Account.db
     restart: always
