@@ -9,6 +9,7 @@
 | Name | Link |
 |------|------|
 | Docker | https://docs.docker.com/engine/install/ | 
+| SQLite3 | https://www.sqlite.org/download.html | 
 
 #### Finding the Necessary Files
 
@@ -23,6 +24,9 @@ cd mho-server-docker
 
 # Build Image
 docker compose build .
+
+# Init DB
+sqlite3 ./data/Account.db "$(cat data/sqlite/InitializeDatabase.sql)"
 
 # Run Containers (use -d to run in detached mode)
 docker compose up
