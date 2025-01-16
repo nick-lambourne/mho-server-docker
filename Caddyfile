@@ -1,4 +1,4 @@
-http {
+http:// {
     root * /space/web/
     handle /AuthServer/* {
         uri strip_prefix /AuthServer
